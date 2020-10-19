@@ -8,7 +8,28 @@ spring:
     url: jdbc:mysql://192.168.6.144:3306/tensquare_article?characterEncoding=UTF-8
     username: root
     password: 123456
-# Mybatis-Plus 配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+#mongodb
+  data:
+    mongodb:
+      database: commentdb
+      host: 192.168.6.144
+#redis
+  redis:
+    host: 192.168.6.144
+  # Mybatis-Plus 配置
   #  mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.tensquare.article.pojo
