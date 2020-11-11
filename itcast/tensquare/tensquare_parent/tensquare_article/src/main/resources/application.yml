@@ -32,6 +32,7 @@ spring:
   # Mybatis-Plus 配置
   #  mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
+mybatis-plus:
   typeAliasesPackage: com.tensquare.article.pojo
   global-config:
     id-type: 1  #0:数据库ID自增   1:用户输入id

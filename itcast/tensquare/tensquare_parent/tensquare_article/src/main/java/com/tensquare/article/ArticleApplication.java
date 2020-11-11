@@ -13,7 +13,7 @@ import utils.IdWorker;
  * @Date 2020/10/19 15:52
  **/
 @SpringBootApplication
-@MapperScan("com.tensquare.article.dao")
+@MapperScan("com.tensquare.article.dao*")
 public class ArticleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ArticleApplication.class, args);

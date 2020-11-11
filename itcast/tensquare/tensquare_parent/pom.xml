@@ -11,6 +11,7 @@
     <modules>
         <module>tensquare_common</module>
         <module>tensquare_article</module>
+        <module>tensquare_user</module>
     </modules>
 
     <parent>
@@ -67,6 +68,7 @@
             <url>https://repo.spring.io/snapshot</url>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
         <repository>
@@ -74,7 +76,8 @@
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/milestone</url>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
