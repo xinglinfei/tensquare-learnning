@@ -19,6 +19,6 @@ public class BaseExceptionHandler {
 	public Result handler(Exception e){
 		System.out.println("处理异常");
 		
-		return new Result(false, StatusCode.ERROR, e.getMessage());
+		return new Result(false, StatusCode.ERROR.getCode(), e.getMessage());
 	}
 }

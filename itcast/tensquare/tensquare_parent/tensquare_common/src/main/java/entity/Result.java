@@ -6,14 +6,21 @@ package entity;
  * @Author xlf
  * @Date 2020/10/19 10:52
  **/
-public class Result {
+public class Result<T> {
 	private boolean flag;
 	private Integer code;
 	private String message;
-	private Object data;
+	private T data;
 	
 	public Result() {
 	}
+	
+	public Result(T data) {
+		this(StatusCode.SUCCESS
+			
+			,data);
+	}
+	
 	
 	public Result(boolean flag, Integer code, String message) {
 		this.flag = flag;
@@ -21,10 +28,16 @@ public class Result {
 		this.message = message;
 	}
 	
-	public Result(boolean flag, Integer code, String message, Object data) {
+	public Result(boolean flag, Integer code, String message, T data) {
 		this.flag = flag;
 		this.code = code;
 		this.message = message;
+		this.data = data;
+	}
+	
+	public Result(StatusCode code, T data) {
+		this.code = code.getCode();
+		this.message = code.getMsg();
 		this.data = data;
 	}
 	
@@ -56,7 +69,7 @@ public class Result {
 		return data;
 	}
 	
-	public void setData(Object data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 	

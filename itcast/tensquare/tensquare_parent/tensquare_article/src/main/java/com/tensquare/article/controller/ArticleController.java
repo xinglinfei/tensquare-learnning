@@ -41,26 +41,26 @@ public class ArticleController {
 		//封装分页返回对象
 		PageResult<Article> pageResult = new PageResult<>(pageData.getTotal(), pageData.getRecords());
 		//返回数据
-		return new Result(true, StatusCode.OK, "查询成功", pageResult);
+		return new Result(true, StatusCode.SUCCESS.getCode(), "查询成功", pageResult);
 	}
 	//条件查询
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public Result findAll() {
 		List<Article> list = articleService.findAll();
-		return new Result(true, StatusCode.OK, "查询成功", list);
+		return new Result(true, StatusCode.SUCCESS.getCode(), "查询成功", list);
 	}
 	
 	@RequestMapping(value = "/{articleId}", method = RequestMethod.GET)
 	public Result findById(@PathVariable String articleId) {
 		Article article = articleService.findById(articleId);
-		return new Result(true, StatusCode.OK, "查询成功", article);
+		return new Result(true, StatusCode.SUCCESS.getCode(), "查询成功", article);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public Result save(@RequestBody Article article) {
 		articleService.save(article);
-		return new Result(true, StatusCode.OK, "新增成功");
+		return new Result(true, StatusCode.SUCCESS.getCode(), "新增成功");
 	}
 	
 	@RequestMapping(value = "{articleId}", method = RequestMethod.PUT)
@@ -70,12 +70,12 @@ public class ArticleController {
 		article.setId(articleId);
 		//执行修改
 		articleService.updateById(article);
-		return new Result(true, StatusCode.OK, "修改成功");
+		return new Result(true, StatusCode.SUCCESS.getCode(), "修改成功");
 	}
 	
 	@RequestMapping(value = "{articleId}", method = RequestMethod.DELETE)
 	public Result deleteById(@PathVariable String articleId) {
 		articleService.deleteById(articleId);
-		return new Result(true, StatusCode.OK, "删除成功");
+		return new Result(true, StatusCode.SUCCESS.getCode(), "删除成功");
 	}
 }
